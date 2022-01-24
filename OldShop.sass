@@ -1,0 +1,276 @@
+@use './home.sass'
+$shop-top-background: #5B94AC
+$item-border-color: #00000028
+$body-background: #96AEB9
+
+.background-shop
+  background-color: $body-background
+  min-height: 100vh
+  width: 100vw
+  
+  
+.sh-top-flex-container
+  height: 110px
+  background-color: $shop-top-background
+  display: flex
+  justify-content: space-between
+  color: white
+  font-family: home.$top-bar-font
+  padding: 20px 30px
+
+  .sh-top-flex-item1
+    line-height: 0.82
+    display: flex
+    flex-direction: column
+    cursor: default
+
+    .avalon-sub-container
+      display: flex
+      align-items: start
+
+    h1
+      font-size: 4.5rem
+      font-weight: 300
+
+    
+    hr
+      flex-basis: 40%
+      height: 1px
+      margin: 10px 15px 0 15px
+      background-color: white
+      
+    
+    h2
+      font-size: 1.5rem
+      font-weight: 100
+
+  .sh-top-flex-item2
+    flex-basis: 40%
+    display: flex
+    justify-content: space-around
+    align-items: center
+
+    .nav-link
+      font-weight: 300
+      font-size: 1.5rem
+      cursor: pointer
+      color: white
+      text-decoration: none
+    .nav-link:hover
+      color: home.$hover-link-color
+
+.cart
+  color: white
+  font-size: 1.6rem
+  
+  
+.cart-container
+  position: relative
+  padding: 10px
+  
+
+  .cart-amount
+    position: absolute
+    top: -10px
+    left: -10px
+    height: 25px
+    width: 25px
+    border-radius: 50%
+    background-color: #F86D6D
+    display: flex
+    justify-content: center
+    
+    span
+      margin-top: 3px
+      margin-right: 2px
+      color: black
+      letter-spacing: -1px
+      font-family: "gentium basic"
+
+.shop-flex-container
+  height: auto
+  padding: 50px 30px
+  display: flex
+  flex-wrap: wrap
+  gap: 45px
+  justify-content: center
+  
+  
+  .shop-flex-item
+    flex-basis: 26%
+    
+    // border: solid 1px black
+    min-height: 325px
+
+    .sub-container
+      padding: 0 20px
+      position: relative
+      
+      .break
+        border: solid 1px transparent
+        margin-top: 20px
+      
+      .item-description
+        font-family: "ebrima"
+        font-weight: 600
+        
+      .sub-grid
+        
+        display: grid
+        align-items: center
+        grid-template-columns: repeat(3, 1fr)
+        grid-template-rows: auto
+        
+      input
+        height: 20px
+        grid-column: 2 
+        grid-row: 1 / 1
+        text-align: center
+        max-width: 40px
+        padding: 2px 0
+        background: #CDCDCD
+        justify-self: start
+        
+        border: solid 1px #6C7E86
+        border-radius: 3px
+      
+      .incrementer
+        grid-column: 2 / 3
+        grid-row: 1 / 1
+        justify-self: center
+        align-self: start
+        margin-left: 5px
+
+      .decrementer
+        grid-column: 2 / 3
+        grid-row: 1 / 1
+        justify-self: center
+        align-self: end
+        margin-left: 5px
+      .add-cart
+        
+        padding: 6px 5px
+        grid-column: 3 / 4
+        border-radius: 8px
+        background-color: home.$cart-color
+        border: solid 1px #6C7E86
+        
+       
+
+    .item-photo-container
+      padding: 20px
+
+    .item-photo-container > *
+      height: 250px 
+      background-repeat: no-repeat
+      background-size: cover
+      
+    .bedside
+      background-image: url(./photos/bedside.jpg) 
+      background-position: 75% 75%
+
+    .ceiling
+      background-image: url(./photos/ceiling.jpg) 
+      background-position: 60% 60%
+
+    .grapes
+      background-image: url(./photos/grapes.jpg)
+      background-position: 50% 50%
+    
+    .streetlamp
+      background-image: url(./photos/streetlamp.jpg)
+      background-position: 50% 50%
+    
+    .tartar
+      background-image: url(./photos/tartar.jpg)
+      background-position: 60% 60%
+    
+    .ufo
+      background-image: url(./photos/ufo.jpg)
+      background-position: 10% 10%
+
+
+@media (min-width: 600px) and (max-width: 800px)
+  .shop-flex-container
+    gap: 20px
+    .shop-flex-item
+      flex-basis: 45%
+
+@media (max-width: 600px)
+  .shop-flex-container
+    gap: 20px
+    .shop-flex-item
+      flex-basis: 65%
+
+
+@media (min-width: 1089px) and (max-width: 1325px)
+  .shop-flex-container
+    .shop-flex-item
+      .sub-container
+        .incrementer
+          margin-left: 30px
+        .decrementer
+          margin-left: 30px
+
+
+@media (min-width: 800px) and (max-width: 1089px)
+  .shop-flex-container
+    
+    .shop-flex-item
+      
+      .sub-container
+        input
+          grid-column: 1 / 2
+          justify-self: end
+        
+        .incrementer
+          grid-column: 2
+          justify-self: start
+          margin-left: 10px
+          margin-top: 8px
+          
+        .decrementer
+          margin-left: 10px
+          grid-column: 2
+          justify-self: start
+          align-self: start
+          margin-top: 22px
+
+@media (min-width: 601px) and (max-width: 800px)
+  .shop-flex-container
+    .shop-flex-item
+      .sub-container
+        input
+          grid-column: 1 / 2
+          justify-self: end
+        
+        .incrementer
+          grid-column: 2
+          justify-self: start
+          margin-left: 10px
+          margin-top: 5px
+          
+        .decrementer
+          margin-left: 10px
+          grid-column: 2
+          align-self: start
+          justify-self: start
+          margin-top: 20px
+
+
+
+// .cart-container::before
+//   content: "10"
+//   text-align: center
+//   position: absolute
+//   width: 20px
+//   height: 20px
+//   border-radius: 50%
+//   background-color: #F86D6D
+//   top: -10px
+//   left: -5px
+//   letter-spacing: -0.5px
+//   font-size: 0.8rem
+//   color: black
+//   font-family: home.$hero-font
+  

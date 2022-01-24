@@ -1,0 +1,124 @@
+$home-background-color: linear-gradient(#609CB5, #2B4048)
+
+$home-font-color: white
+$top-bar-font: Bell MT
+$hero-font: microsoft jhenghei
+$shop-background-color: #96AEB9
+$cart-color: #C3AD71
+$hover-link-color: #FAD3F7
+
+*, *::before, *::after 
+  margin: 0
+  padding: 0
+  border: 0
+  box-sizing: border-box
+
+
+strong 
+  font-weight: bold
+
+.background
+  min-height: 100vh
+  width: 100vw
+  background: $home-background-color
+  padding: 20px 30px
+  position: relative
+  
+.top-flex-container
+  display: flex
+  justify-content: space-between
+  // align-items: center
+  color: $home-font-color
+  font-family: $top-bar-font
+
+  .top-flex-item1
+    line-height: 0.82
+    display: flex
+    flex-direction: column
+    cursor: default
+
+    .avalon-sub-container
+      display: flex
+      align-items: start
+
+    h1
+      font-size: 5.5rem
+      font-weight: 300
+
+    
+    hr
+      flex-basis: 40%
+      height: 1px
+      margin: 10px 15px 0 15px
+      background-color: white
+      
+    
+    h2
+      font-size: 1.5rem
+      font-weight: 100
+
+  .top-flex-item2
+    flex-basis: 25%
+    display: flex
+    justify-content: space-around
+    align-items: center
+
+    .nav-link
+      font-weight: 300
+      font-size: 1.5rem
+      cursor: pointer
+      color: white
+      text-decoration: none
+    .nav-link:hover
+      color: $hover-link-color
+    
+.hero-container
+  position: absolute
+  top: 40%
+  width: calc(100% - 60px)
+  font-family: $hero-font
+  color: white
+  text-align: center
+  line-height: 1.5
+  
+
+  .hero-text
+    font-size: 1.9rem
+    font-weight: 100
+    letter-spacing: 0.6px
+    
+.button-container
+  position: absolute
+  top: 70%
+  width: calc(100% - 60px)
+  text-align: center
+  
+
+  button
+    background-color: transparent
+    color: white
+    font-size: 1.5rem
+    font-family: $top-bar-font
+    border: solid 2px white
+    padding: 10px 35px
+    border-radius: 10px
+    cursor: pointer
+
+
+@media (min-width: 575px) and (max-width: 800px)
+  .top-flex-container
+    .top-flex-item1
+      
+    .top-flex-item2
+      flex-basis: 40%
+
+@media (max-width: 575px)
+  .top-flex-container
+    .top-flex-item1
+      h1
+        font-size: 3.75rem
+    
+    .top-flex-item2
+      flex-basis: 40%
+      .nav-link
+        font-size: 1.25rem  
