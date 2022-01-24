@@ -25,9 +25,7 @@ const Shop = () => {
   const [totalCost, setTotalCost] = useState(0)
   const [error, setError] = useState("")
   const [updateTheCart, setUpdateTheCart] = useState(true)
-  // useEffect(() => {
-  //   console.log('the input state has changed')
-  // }, [input])
+  
 
   let showDecimals = (number) => {
     let str = number.toString()
@@ -136,7 +134,6 @@ const Shop = () => {
   let decrement = (event) => {
     let decrementBtnId = event.target.attributes.data.value
     let currentValue = parseInt(currentInput.value)
-    console.log(currentValue)
     let currentInputId = currentInput.attributes.data.value
     if (currentValue > 9 || currentValue < 1) return
 
@@ -182,8 +179,6 @@ const Shop = () => {
           setTotalCost(Math.round((totalCost + Math.round((item.price * input) * 100) / 100) * 100) / 100 )
         }
 
-        
-        // setTotalCost(Math.round((totalCost + Math.round((item.price * input) * 100) / 100) * 100) / 100 )
         
       }
       if (item.id == addCartData && shoppingCart.length < 1 ) {
