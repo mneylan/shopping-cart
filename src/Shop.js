@@ -80,7 +80,7 @@ const Shop = () => {
     }
     
      setCurrentInput(event.target)
-    
+     
     if (visitedInput.length < 1) {
       setVisitedInput([event.target])
       
@@ -110,21 +110,28 @@ const Shop = () => {
   let increment = (event) => {
     
     
+    
     let incrementBtnId = event.target.attributes.data.value
+    
     let currentValue = parseInt(currentInput.value)
+    
     let currentInputId = currentInput.attributes.data.value
     
 
     if (currentValue > 9 || currentValue < 0) return
 
+    
     if (!currentValue) {
+      
       currentInput.value = '1' 
+      setInput(currentInput.value)
       return
     }
     
     if (incrementBtnId == currentInputId) {
        
         let newValue = currentValue += 1
+        
         currentInput.value = newValue.toString()
         setInput(currentInput.value)
      }
@@ -135,7 +142,7 @@ const Shop = () => {
     let decrementBtnId = event.target.attributes.data.value
     let currentValue = parseInt(currentInput.value)
     let currentInputId = currentInput.attributes.data.value
-    if (currentValue > 9 || currentValue < 1) return
+    if (currentValue > 10 || currentValue < 1) return
 
     if (!currentValue) {
       currentInput.value = '0'
