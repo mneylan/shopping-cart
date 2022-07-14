@@ -174,6 +174,8 @@ const Shop = () => {
         let inCart = alreadyInCart(item.name)
         if (inCart) {
           condenseCart(item.name, item.id)
+          setTotalCost(Math.round((totalCost + Math.round((item.price * input) * 100) / 100) * 100) / 100 )
+          
           if (condenseCart(item.name, item.id) == false) {
             setTotalCost(totalCost)
           }
